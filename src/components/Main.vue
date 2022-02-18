@@ -1,6 +1,7 @@
 <template>
   <main>
     <Jumbotron />
+    <!-- Sezione chi siamo -->
     <div class="container">
       <div class="row clearfix">
         <CardWho
@@ -10,18 +11,22 @@
         />
       </div>
     </div>
+    <!-- Sezione Updates -->
+    <SecUpdates />
   </main>
 </template>
 
 <script>
 import Jumbotron from "./Jumbotron.vue";
 import CardWho from "./CardWho.vue";
+import SecUpdates from "./SecUpdates.vue";
 
 export default {
   name: "Main",
   components: {
     Jumbotron,
     CardWho,
+    SecUpdates,
   },
   data() {
     return {
