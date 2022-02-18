@@ -13,6 +13,8 @@
     </div>
     <!-- Sezione Updates -->
     <SecUpdates />
+    <!-- Sezione speakers -->
+    <SecSpeakers />
   </main>
 </template>
 
@@ -20,6 +22,7 @@
 import Jumbotron from "./Jumbotron.vue";
 import CardWho from "./CardWho.vue";
 import SecUpdates from "./SecUpdates.vue";
+import SecSpeakers from "./SecSpeakers.vue";
 
 export default {
   name: "Main",
@@ -27,6 +30,7 @@ export default {
     Jumbotron,
     CardWho,
     SecUpdates,
+    SecSpeakers,
   },
   data() {
     return {
