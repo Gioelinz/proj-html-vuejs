@@ -1,2 +1,10 @@
 @import '~bootstrap/scss/bootstrap.scss';
-@import 'vars'
+@import 'vars';
+
+.button-template {
+    color: white;
+    background-color: $scarlet;
+    padding: 15px 25px;
+    border: 0;
+    font-weight: 600;
+  }
