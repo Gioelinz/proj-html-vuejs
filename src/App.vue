@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       navElements: [
-        { text: "HOME", active: true },
+        { text: "HOME", active: false },
         { text: "PAGES", active: false },
         { text: "PROGRAM", active: false },
         { text: "TICKETS", active: false },

@@ -8,9 +8,13 @@
         <nav>
           <ul class="nav">
             <li v-for="(item, index) in nav" :key="index">
-              <a class="item-nav" :class="{ active: item.active }" href="#">{{
-                item.text
-              }}</a>
+              <a
+                class="item-nav"
+                :class="{ active: setPage(index) }"
+                @click="currentIndex = index"
+                href="#"
+                >{{ item.text }}</a
+              >
             </li>
             <li>
               <a class="item-nav" href="#">|</a>
@@ -31,6 +35,16 @@
 export default {
   name: "Header",
   props: ["nav"],
+  data() {
+    return {
+      currentIndex: 0,
+    };
+  },
+  methods: {
+    setPage(index) {
+      return this.currentIndex === index;
+    },
+  },
 };
 </script>
 
