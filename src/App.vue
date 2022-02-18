@@ -20,14 +20,14 @@ export default {
   data() {
     return {
       navElements: [
-        { text: "HOME" },
-        { text: "PAGES" },
-        { text: "PROGRAM" },
-        { text: "TICKETS" },
-        { text: "SPEAKERS" },
-        { text: "PAPERS" },
-        { text: "BLOG" },
-        { text: "SHORTCODES" },
+        { text: "HOME", active: true },
+        { text: "PAGES", active: false },
+        { text: "PROGRAM", active: false },
+        { text: "TICKETS", active: false },
+        { text: "SPEAKERS", active: false },
+        { text: "PAPERS", active: false },
+        { text: "BLOG", active: false },
+        { text: "SHORTCODES", active: false },
       ],
     };
   },

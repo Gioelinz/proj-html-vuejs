@@ -8,7 +8,9 @@
         <nav>
           <ul class="nav">
             <li v-for="(item, index) in nav" :key="index">
-              <a class="item-nav" href="#">{{ item.text }}</a>
+              <a class="item-nav" :class="{ active: item.active }" href="#">{{
+                item.text
+              }}</a>
             </li>
             <li>
               <a class="item-nav" href="#">|</a>
