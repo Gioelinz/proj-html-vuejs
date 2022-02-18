@@ -37,6 +37,6 @@ export default {
 <style lang="scss">
 @import "./assets/scss/generics.scss";
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 </style>

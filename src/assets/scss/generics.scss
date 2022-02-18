@@ -6,5 +6,8 @@
     background-color: $scarlet;
     padding: 15px 25px;
     border: 0;
-    font-weight: 600;
+    font-weight: 700;
+    &:active{
+        background-color: $sushi;
+    }
   }

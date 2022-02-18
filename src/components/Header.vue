@@ -3,7 +3,7 @@
     <div class="container h-100">
       <div class="h-100 d-flex justify-content-between align-items-center">
         <figure class="m-0">
-          <img src="../assets/images/logo.png" alt="" />
+          <img src="../assets/images/logo.png" alt="logo" />
         </figure>
         <nav>
           <ul class="nav">
