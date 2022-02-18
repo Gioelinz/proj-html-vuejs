@@ -1,13 +1,26 @@
 <template>
   <header>
-    <div class="container">
-      <nav>
-        <ul class="nav">
-          <li v-for="(item, index) in nav" :key="index">
-            <a class="item-nav" href="#">{{ item.text }}</a>
-          </li>
-        </ul>
-      </nav>
+    <div class="container h-100">
+      <div class="h-100 d-flex justify-content-between align-items-center">
+        <figure class="m-0">
+          <img src="../assets/images/logo.png" alt="" />
+        </figure>
+        <nav>
+          <ul class="nav">
+            <li v-for="(item, index) in nav" :key="index">
+              <a class="item-nav" href="#">{{ item.text }}</a>
+            </li>
+            <li>
+              <a class="item-nav" href="#">|</a>
+            </li>
+            <li>
+              <a class="item-nav" href="#">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 </template>
@@ -30,7 +43,13 @@ header {
     font-weight: 800;
     font-size: 12px;
     letter-spacing: 1px;
-    margin: 0 10px;
+    margin: 0 15px;
+    padding-bottom: 10px;
+    &:hover,
+    &.active {
+      color: $scarlet;
+      border-bottom: 3px solid $scarlet;
+    }
   }
 }
 </style>
