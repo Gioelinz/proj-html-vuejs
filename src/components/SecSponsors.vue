@@ -8,7 +8,11 @@
       </p>
       <div class="sponsors-links pt-5">
         <div class="row">
-          <div class="col link-img" v-for="banner in banners" :key="banner">
+          <div
+            class="col link-img"
+            v-for="(banner, index) in banners"
+            :key="index"
+          >
             <a href="#">
               <img
                 :src="require(`../assets/images/${banner.img}`)"
