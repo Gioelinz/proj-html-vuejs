@@ -27,6 +27,8 @@
     <SecTickets />
     <!-- Sezione Presentazioni -->
     <SecPresentation />
+    <!-- Sezione Sponsors -->
+    <SecSponsors />
   </main>
 </template>
 
@@ -41,6 +43,7 @@ import SecLocation from "./SecLocation.vue";
 import SecNews from "./SecNews.vue";
 import SecTickets from "./SecTickets.vue";
 import SecPresentation from "./SecPresentation.vue";
+import SecSponsors from "./SecSponsors.vue";
 
 export default {
   name: "Main",
@@ -55,6 +58,7 @@ export default {
     SecNews,
     SecTickets,
     SecPresentation,
+    SecSponsors,
   },
   data() {
     return {
