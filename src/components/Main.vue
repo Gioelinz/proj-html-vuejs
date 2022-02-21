@@ -19,6 +19,8 @@
     <SecProgram />
     <!-- Mappa Google -->
     <Maps />
+    <!-- Sezione Location -->
+    <SecLocation />
   </main>
 </template>
 
@@ -29,6 +31,7 @@ import SecUpdates from "./SecUpdates.vue";
 import SecSpeakers from "./SecSpeakers.vue";
 import SecProgram from "./SecProgram.vue";
 import Maps from "./Maps.vue";
+import SecLocation from "./SecLocation.vue";
 
 export default {
   name: "Main",
@@ -39,6 +42,7 @@ export default {
     SecSpeakers,
     SecProgram,
     Maps,
+    SecLocation,
   },
   data() {
     return {
