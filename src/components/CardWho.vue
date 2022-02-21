@@ -42,9 +42,5 @@ export default {
     text-decoration: none;
     display: inline-block;
   }
-  .learn {
-    color: $scarlet;
-    letter-spacing: 1px;
-  }
 }
 </style>

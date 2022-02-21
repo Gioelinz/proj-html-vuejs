@@ -15,6 +15,8 @@
     <SecUpdates />
     <!-- Sezione speakers -->
     <SecSpeakers />
+    <!-- Sezione Program -->
+    <SecProgram />
   </main>
 </template>
 
@@ -23,6 +25,7 @@ import Jumbotron from "./Jumbotron.vue";
 import CardWho from "./CardWho.vue";
 import SecUpdates from "./SecUpdates.vue";
 import SecSpeakers from "./SecSpeakers.vue";
+import SecProgram from "./SecProgram.vue";
 
 export default {
   name: "Main",
@@ -31,6 +34,7 @@ export default {
     CardWho,
     SecUpdates,
     SecSpeakers,
+    SecProgram,
   },
   data() {
     return {

@@ -15,25 +15,31 @@
       <div class="people">
         <div class="row">
           <div class="col-3" v-for="speaker in speakers" :key="speaker.name">
-            <figure>
-              <img
-                class="img-fluid"
-                :src="require(`../assets/images/${speaker.image}`)"
-                alt=""
-              />
-              <div class="hover-overlay">
-                <div class="socials">
-                  <a href="#"><i class="fa-brands fa-twitter fa-xl"></i></a>
-                  <a href="#"><i class="fa-brands fa-facebook-f fa-xl"></i></a>
-                  <a href="#"><i class="fa-brands fa-linkedin-in fa-xl"></i></a>
+            <div class="people-card" v-if="speaker.visible">
+              <figure>
+                <img
+                  class="img-fluid"
+                  :src="require(`../assets/images/${speaker.image}`)"
+                  alt=""
+                />
+                <div class="hover-overlay">
+                  <div class="socials">
+                    <a href="#"><i class="fa-brands fa-twitter fa-xl"></i></a>
+                    <a href="#"
+                      ><i class="fa-brands fa-facebook-f fa-xl"></i
+                    ></a>
+                    <a href="#"
+                      ><i class="fa-brands fa-linkedin-in fa-xl"></i
+                    ></a>
+                  </div>
                 </div>
+              </figure>
+              <div class="text-center mt-4">
+                <h4>{{ speaker.name }}</h4>
+                <p class="text-muted">
+                  <em>{{ speaker.job }}</em>
+                </p>
               </div>
-            </figure>
-            <div class="text-center mt-4">
-              <h4>{{ speaker.name }}</h4>
-              <p class="text-muted">
-                <em>{{ speaker.job }}</em>
-              </p>
             </div>
           </div>
         </div>
@@ -47,26 +53,37 @@ export default {
   name: "SecSpeakers",
   data() {
     return {
+      currentIndex: 0,
       speakers: [
         {
           image: "speaker-6.jpg",
           name: "PATRICK SPENCER",
           job: "S&P Analyzer",
+          visible: true,
         },
         {
           image: "speaker-5.jpg",
           name: "JANET JONES",
           job: "Newyork Post's GM",
+          visible: true,
         },
         {
           image: "speaker-4.jpg",
           name: "MICHAEL DOVER",
           job: "Starbuck's CEO",
+          visible: true,
         },
         {
           image: "speaker-3.jpg",
           name: "ANGELINA HOLY",
           job: "Maxii's Manager",
+          visible: true,
+        },
+        {
+          image: "speaker-1.jpg",
+          name: "ANGELINAs HOLY",
+          job: "Maxii's Manager",
+          visible: false,
         },
       ],
     };
@@ -114,6 +131,7 @@ export default {
         bottom: 0;
         background-color: rgba($scarlet, 0.6);
         border-radius: 6px;
+        animation: fade-in 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
         .socials {
           position: absolute;
           top: 50%;
@@ -126,6 +144,15 @@ export default {
         }
       }
     }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>

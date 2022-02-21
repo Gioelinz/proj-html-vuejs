@@ -19,7 +19,7 @@
             <li>
               <a class="item-nav" href="#">|</a>
             </li>
-            <li>
+            <li class="d-none d-xl-block">
               <a class="item-nav" href="#">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </a>
