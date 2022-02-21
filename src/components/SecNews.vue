@@ -6,7 +6,7 @@
         <a href="#"><em class="learn">Read All News</em></a>
       </div>
       <div class="card-container">
-        <div class="row gx-4">
+        <div class="row gx-5">
           <CardNews
             v-for="(newParam, index) in newsParams"
             :key="index"
