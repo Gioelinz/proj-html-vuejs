@@ -17,6 +17,8 @@
     <SecSpeakers />
     <!-- Sezione Program -->
     <SecProgram />
+    <!-- Mappa Google -->
+    <Maps />
   </main>
 </template>
 
@@ -26,6 +28,7 @@ import CardWho from "./CardWho.vue";
 import SecUpdates from "./SecUpdates.vue";
 import SecSpeakers from "./SecSpeakers.vue";
 import SecProgram from "./SecProgram.vue";
+import Maps from "./Maps.vue";
 
 export default {
   name: "Main",
@@ -35,6 +38,7 @@ export default {
     SecUpdates,
     SecSpeakers,
     SecProgram,
+    Maps,
   },
   data() {
     return {
