@@ -23,6 +23,8 @@
     <SecLocation />
     <!-- Sezione Cards News Recenti -->
     <SecNews />
+    <!-- Sezione Shop Tickets -->
+    <SecTickets />
   </main>
 </template>
 
@@ -35,6 +37,7 @@ import SecProgram from "./SecProgram.vue";
 import Maps from "./Maps.vue";
 import SecLocation from "./SecLocation.vue";
 import SecNews from "./SecNews.vue";
+import SecTickets from "./SecTickets.vue";
 
 export default {
   name: "Main",
@@ -47,6 +50,7 @@ export default {
     Maps,
     SecLocation,
     SecNews,
+    SecTickets,
   },
   data() {
     return {
