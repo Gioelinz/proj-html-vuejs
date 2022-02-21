@@ -27,7 +27,7 @@
             <p class="text-white">{{ program.date }}</p>
           </div>
         </div>
-        <div class="body-table d-flex">
+        <div class="body-table d-flex border-0">
           <div class="left-section w-50 ps-5 pt-5">
             <div class="time d-flex">
               <i class="fa-regular fa-clock pe-3"></i>

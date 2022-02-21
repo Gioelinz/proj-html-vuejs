@@ -21,6 +21,8 @@
     <Maps />
     <!-- Sezione Location -->
     <SecLocation />
+    <!-- Sezione Cards News Recenti -->
+    <SecNews />
   </main>
 </template>
 
@@ -32,6 +34,7 @@ import SecSpeakers from "./SecSpeakers.vue";
 import SecProgram from "./SecProgram.vue";
 import Maps from "./Maps.vue";
 import SecLocation from "./SecLocation.vue";
+import SecNews from "./SecNews.vue";
 
 export default {
   name: "Main",
@@ -43,6 +46,7 @@ export default {
     SecProgram,
     Maps,
     SecLocation,
+    SecNews,
   },
   data() {
     return {
