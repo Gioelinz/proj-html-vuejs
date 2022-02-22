@@ -60,7 +60,11 @@ export default {
     isSuccess() {
       if (!this.email) return;
       if (!this.email.includes("@")) {
+        this.successEmail = false;
         this.errEmail = true;
+        setTimeout(() => {
+          this.errEmail = false;
+        }, 7000);
       } else {
         this.errEmail = false;
         this.successEmail = true;
