@@ -21,10 +21,23 @@
       </div>
       <div class="subscribe text-center">
         <h4>SUBSCRIBE FOR UPDATES</h4>
-        <form action="#">
-          <input type="text" placeholder="Please fill your email..." />
-          <button class="button-template ms-3">SUBSCRIBE</button>
-        </form>
+        <div class="form">
+          <input
+            v-model.trim="email"
+            type="email"
+            placeholder="Please fill your email..."
+            @keyup.enter="isSuccess()"
+          />
+          <button @click="isSuccess()" class="button-template ms-3">
+            SUBSCRIBE
+          </button>
+        </div>
+        <div v-if="successEmail" class="alert alert-success w-50" role="alert">
+          Email send correctly!
+        </div>
+        <div v-if="errEmail" class="alert alert-danger" role="alert">
+          Wrong Email!
+        </div>
       </div>
     </div>
   </section>
@@ -38,7 +51,24 @@ export default {
     return {
       now: Math.trunc(new Date().getTime() / 1000),
       event: this.date,
+      email: "",
+      successEmail: false,
+      errEmail: false,
     };
+  },
+  methods: {
+    isSuccess() {
+      if (!this.email) return;
+      if (!this.email.includes("@")) {
+        this.errEmail = true;
+      } else {
+        this.errEmail = false;
+        this.successEmail = true;
+        setTimeout(() => {
+          this.successEmail = false;
+        }, 5000);
+      }
+    },
   },
   mounted() {
     /* Aggiorno ogni secondo */
@@ -119,11 +149,12 @@ export default {
   }
   .subscribe {
     padding-bottom: 6rem;
+    position: relative;
     h4 {
       letter-spacing: 2px;
       font-weight: 600;
     }
-    form {
+    .form {
       margin: 0 auto;
       input {
         padding: 14px 15px;
@@ -134,6 +165,12 @@ export default {
           border: 0;
         }
       }
+    }
+    .alert {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translate(-50%);
     }
   }
 }
