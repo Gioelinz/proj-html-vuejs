@@ -12,7 +12,7 @@
       </div>
     </div>
     <!-- Sezione Updates -->
-    <SecUpdates />
+    <SecUpdates :date="end" />
     <!-- Sezione speakers -->
     <SecSpeakers />
     <!-- Sezione Program -->
@@ -62,6 +62,9 @@ export default {
   },
   data() {
     return {
+      /* Countdown */
+      end: new Date("2028-07-11T00:00:00"),
+
       whoInfos: [
         {
           icon: "fa-solid fa-trophy",
