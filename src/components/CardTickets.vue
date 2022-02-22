@@ -16,7 +16,9 @@
         </div>
       </div>
       <div class="button-card">
-        <button class="w-100 button-template"><span>BOOK NOW</span></button>
+        <button @click="$emit('isClick', true)" class="w-100 button-template">
+          <span>BOOK NOW</span>
+        </button>
       </div>
     </div>
   </div>

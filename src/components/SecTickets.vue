@@ -2,12 +2,23 @@
   <section id="tickets">
     <div class="container">
       <h2 class="text-center text-white">TICKETS</h2>
-      <div class="row gx-5">
+      <div v-if="!isClicked" class="row gx-5 card-ticket">
         <CardTickets
+          @isClick="hasClicked"
           v-for="ticket in tickets"
           :key="ticket.cost"
           :ticket="ticket"
         />
+      </div>
+      <div v-else class="loading text-center">
+        <button
+          @click="isClicked = false"
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+        ></button>
+        <p>Ti stiamo reindirizzando al sito per il pagamento</p>
+        <img src="../assets/images/paypal-loader.gif" alt="loader-gif" />
       </div>
     </div>
   </section>
@@ -21,6 +32,7 @@ export default {
   components: { CardTickets },
   data() {
     return {
+      isClicked: false,
       tickets: [
         {
           title: "ONE DAY PASS",
@@ -61,6 +73,11 @@ export default {
       ],
     };
   },
+  methods: {
+    hasClicked(boolean) {
+      this.isClicked = boolean;
+    },
+  },
 };
 </script>
 
@@ -70,11 +87,60 @@ export default {
   background-size: auto;
   background-position: top center;
   padding: 4rem 0;
+  height: 700px;
   h2 {
     padding-bottom: 3rem;
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 1px;
+  }
+  .loading {
+    position: relative;
+    margin: 0 auto;
+    background-color: #f3f3f3;
+    padding: 3rem;
+    margin-top: 10%;
+    width: 50%;
+    box-shadow: 0px 0px 10px 1px rgb(42, 42, 42);
+    animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  }
+}
+.card-ticket {
+  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes scale-in-ver-top {
+  0% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
   }
 }
 </style>
