@@ -17,8 +17,15 @@
           class="btn-close"
           aria-label="Close"
         ></button>
-        <p>Ti stiamo reindirizzando al sito per il pagamento</p>
-        <img src="../assets/images/paypal-loader.gif" alt="loader-gif" />
+        <p>We are redirecting you to the payment site...</p>
+        <img
+          v-if="!hasErr"
+          src="../assets/images/paypal-loader.gif"
+          alt="loader-gif"
+        />
+        <div v-if="hasErr" class="alert alert-danger" role="alert">
+          Error with the server, you will be redirected to the previous page...
+        </div>
       </div>
     </div>
   </section>
@@ -33,6 +40,7 @@ export default {
   data() {
     return {
       isClicked: false,
+      hasErr: false,
       tickets: [
         {
           title: "ONE DAY PASS",
@@ -76,6 +84,13 @@ export default {
   methods: {
     hasClicked(boolean) {
       this.isClicked = boolean;
+      setTimeout(() => {
+        this.hasErr = true;
+        setTimeout(() => {
+          this.isClicked = false;
+          this.hasErr = false;
+        }, 3000);
+      }, 6000);
     },
   },
 };
@@ -96,6 +111,7 @@ export default {
   }
   .loading {
     position: relative;
+    height: 170px;
     margin: 0 auto;
     background-color: #f3f3f3;
     padding: 3rem;
